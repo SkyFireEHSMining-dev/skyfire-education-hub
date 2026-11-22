@@ -29,7 +29,7 @@ function selectCourse(courseId){const c=course(courseId);if(!c)return;ui.courseI
 
 function topbar(){const s=getState();const selectPeople=s.learners.filter(x=>x.site===ui.site||ui.site==='all').slice(0,60);const selected=worker(ui.learnerId);if(selected&&!selectPeople.some(x=>x.id===selected.id))selectPeople.unshift(selected);
  return `<header class="app-header"><div class="header-inner"><div class="brand-row">
- <img class="brand-logo" src="https://raw.githubusercontent.com/SkyFireEHSMining-dev/skyfire-safety-library/main/Icons/icon-192.png" onerror="this.onerror=null;this.src='assets/skyfire-mark.svg'" alt="SkyFire logo">
+ <img class="brand-logo" src="assets/skyfire-logo-192.jpg" alt="SkyFire logo">
  <div><h1 class="brand-title">SkyFire Education</h1><p class="brand-subtitle">Training & Learning Hub <span class="badge orange">v0.1 Demo</span></p></div></div>
  <div class="header-controls">
  <label class="field-inline">Mine site <select id="siteSelect" aria-label="Filter mine site"><option value="all" ${ui.site==='all'?'selected':''}>All sites</option>${SITES.map(x=>`<option value="${x.id}" ${ui.site===x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></label>
