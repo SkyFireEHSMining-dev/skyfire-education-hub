@@ -71,6 +71,12 @@ export const BASE_COURSES = [
     summary:'A starting point for ground control, ventilation, visibility, and emergency escape awareness.',objectives:['Identify relevant underground hazards'],lessons:[{id:'u-read',title:'Pause and assess',type:'read',minutes:7,content:'Underground hazards may include unstable ground, air quality, restricted access, moving equipment, and limited escape routes. Follow site-specific ground control, ventilation, and emergency procedures. No underground mine plan is represented here.'}],checklist:[],instructorNotes:'Validate against applicable Part 48 Subpart A and mine operating conditions.'
   },
   {
+    id:'advanced-supervision',name:'Advanced Supervisory Decisions',academy:'Leadership & Supervision',audience:'Supervisors & aspiring leaders',scope:'all',duration:'35 min',status:'Preview lesson',required:false,
+    prerequisites:[{courseId:'leading-listening',type:'required'}],
+    summary:'Apply coaching, communication, and professional judgment to complex shift decisions.',objectives:['Explain decisions under competing operational demands'],
+    lessons:[{id:'adv-read',title:'Lead with clear expectations',type:'read',minutes:12,content:'In this fictional leadership scenario, a task is delayed because workers have conflicting information. Gather facts, hear affected personnel, communicate the standard, and verify the resulting corrective action. A digital lesson does not grant supervisory authority.'}],checklist:[],instructorNotes:'This is an educational preview; review against company policy before operational use.'
+  },
+  {
     id:'professionalism',name:'Professional Communication at Work',academy:'Professional Development',audience:'Open elective',scope:'all',duration:'18 min',status:'Preview lesson',required:false,
     summary:'Professional conduct, constructive feedback, and clear operational handoffs.',objectives:['Strengthen professional communication'],lessons:[{id:'pr-read',title:'Clear handoffs and accountability',type:'read',minutes:7,content:'A useful handoff explains what happened, what is still open, what risk remains, and who owns the next action. Avoid speculation and label unknowns clearly. Invite questions and repeat-back when consequences are significant.'}],checklist:[],instructorNotes:'Use scenarios from fictional work situations.'
   },

@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SCREENSHOTS=ROOT/'tests'/'screenshots'
 SCREENSHOTS.mkdir(parents=True,exist_ok=True)
 parts=[]
-for path in ('src/seed.js','src/store.js','src/app.js'):
+for path in ('src/seed.js','src/learning.js','src/store.js','src/learning-ui.js','src/app.js'):
     txt=(ROOT/path).read_text()
     txt=re.sub(r'^import \{[^}]+\} from [^;]+;\n','',txt,flags=re.M)
     txt=re.sub(r'\bexport (const|function|async function|let|class)\b',r'\1',txt)
@@ -66,7 +66,7 @@ with sync_playwright() as p:
     assert page.get_by_role('heading',name='A practical scenario').count()==1
     # Simulated mobile viewport and layout check
     page.set_viewport_size({'width':390,'height':844})
-    page.get_by_role('button',name='Dashboard').first.click()
+    page.locator('[data-action="v02-toggle-nav"]').click();page.get_by_role('button',name='Dashboard').first.click()
     assert page.evaluate('document.documentElement.scrollWidth') <= 390, 'Mobile document must not overflow horizontally';page.screenshot(path=str(SCREENSHOTS/'mobile.png'),full_page=True)
     assert page.locator('.nav-list').count()==1
     assert not errors,repr(errors)

@@ -46,3 +46,11 @@ Before any real records are collected or used to make training decisions:
 ## Current known gaps
 
 No shared database; no real login or permissions; no encryption key management; no certification authority; no validated content approval; no scenario scoring beyond simple choices; no multimedia upload/encoding; no actual Part 48 compliance engine; no 5000-23; no offline sync; no production service monitoring.
+
+## v0.2 learner data boundaries
+
+The prototype now distinguishes `assignments` (instructor-assigned, potentially recurring cycles), `enrollments` (learner-chosen voluntary course enrollments), `savedCourses` (bookmarks only), `pathways` (shared instructor templates), and `pathwayPlans` (learner-specific choices). `completedHistory` holds separate fictional prior-cycle completions; the current cycle retains a separate `cycle` identifier and assessment progress key. These are demonstration models, not an MSHA-certified data schema.
+
+A browser-local v0.1 dataset is normalized into schema 2; data persists under the existing demo localStorage key to avoid replacing earlier fictional work. The generated completion-history samples use fictional dates, are labeled demo, and should not be interpreted as MSHA certification.
+
+**Before production**: enforce authorization for assigning training and updating pathways; validate all recurrence schedules against approved training plans and other applicable rules; use transactional server-side records and backups; design identity, auditable corrections, formal credential verification, learner privacy, data retention, and eventual exit/export formats. Learners may not self-assert compliance by uploading or completing a course.
